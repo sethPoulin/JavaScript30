@@ -95,15 +95,18 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
-    const transportation = data.reduce((acc,cb) => {
-      let car = 0;
-      let truck = 0;
-      let bike = 0;
-      let walk = 0;
-      let van = 0;
-      if
+    const transportation = data.reduce((acc,cur) => {
+      // console.log(acc[cur] = 1);
+       acc[cur]? acc[cur] = acc[cur] + 1 : acc[cur] = 1;
+       console.log(acc);
+       return acc;
+    },{});
 
-    })
+    const newObject = {};
+    newObject['car'] = 2;
+    // console.log(newObject);
+
+    console.log(transportation);
 
   </script>
 </body>
