@@ -96,6 +96,38 @@
   </div>
 
 <script>
+  const listItems = Array.from(document.querySelectorAll('input'));
+  listItems.map((el, index) => {
+    return el.setAttribute(`value`,`${index}`);
+  });
+  //set event listeners for keydown on shift and change on checkbox.  If both are true, run the below function with the lower value and the higher value + 1 as the arguments
+  //using the values of the checked items, create an array of all values to be selected with a function that runs slice() on the listItems array using the lower value and the higher value + 1 as the arguments of the slice() method and converts each item to a number.
+  const selectedIndexArr = [];
+  const createSelectedIndex = (val1,val2) => {
+    val1 = Number(val1);
+    val2 = Number(val2);
+    let greaterValue;
+    let lesserValue;
+    if(val1 < val2){ 
+      greaterValue = val2;
+      lesserValue = val1;
+      } else {
+        greaterValue = val1;
+        lesserValue = val2;
+      }
+    for(let i=lesserValue; i <= greaterValue; i++){
+      selectedIndexArr.push(i);
+    }
+  } 
+
+  createSelectedIndex(7,2);
+  console.log('selectedIndexArr',selectedIndexArr);
+  //this returns an array of numbers which we name batchSelectedIndexes
+  //iterate over the batchSelectedIndexes array and forEach element, set its checkbox attribute to checked.
+
+
+
+
 </script>
 </body>
 </html>
